@@ -1,8 +1,8 @@
 "use strict";
-
+const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+require("dotenv").config({ path: "./.env" });
 module.exports = {
   //devtool: "eval-source-map", //para renderizar o codigo exatamente como é (sem utilizar)
   entry: path.resolve(__dirname, "src", "index.js"),
@@ -51,6 +51,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, "public", "index.html"),
+    }),
+    new webpack.ProvidePlugin({
+      React: "react",
+    }),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
     }),
   ],
 };

@@ -1,29 +1,53 @@
 import React, { useState } from "react";
-import logo from "../assets/icones/logo.png";
+import logo from "../assets/icones/logo1.png";
 import mail from "../assets/icones/mail.svg";
 import lock from "../assets/icones/lock.svg";
 import { Input } from "../components/Input";
+import { executaRequisicao } from "../services/api";
 
-export const Login = () => {
+export const Login = (props) => {
   const [login, setLogin] = useState("");
   const [senha, setSenha] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const [msgErro, setMsgErro] = useState("");
 
-  const executaLogin = (evento) => {
-    evento.preventDefault();
-    setLoading(true);
-    console.log("login", login);
-    console.log("senha", senha);
+  const executaLogin = async (evento) => {
+    try {
+      evento.preventDefault();
+      setLoading(true);
+      setMsgErro("");
 
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+      const body = {
+        login,
+        senha,
+      };
+
+      const resultado = await executaRequisicao("login", "post", body);
+      console.log("resultado", resultado);
+      if (resultado?.data?.token) {
+        localStorage.setItem("accessToken", resultado.data.token);
+        localStorage.setItem("usuarioNome", resultado.data.nome);
+        localStorage.setItem("usuarioEmail", resultado.data.email);
+        props.setAccessToken(resultado.data.token);
+      }
+    } catch (e) {
+      console.log(e);
+      if (e?.response?.data?.erro) {
+        setMsgErro(e.response.data.erro);
+      } else {
+        setMsgErro(
+          "Não foi possível efetuar o login, fale com o administrador."
+        );
+      }
+    }
+    setLoading(false);
   };
 
   return (
     <div className="container-login">
       <img src={logo} alt="Logo Feel Tech" className="logo" />
       <form>
+        {msgErro && <p>{msgErro}</p>}
         <Input
           srcImg={mail}
           altImg={"Icone email"}
