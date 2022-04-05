@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
+  //Para ocultar a rota do usuário, quando tiver token vai para a home e quando não ele vai para o login
   const [accessToken, setAccessToken] = useState(
     localStorage.getItem("accessToken")
   );
