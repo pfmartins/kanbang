@@ -1,7 +1,8 @@
+import "./styles/app.scss";
 import React from "react";
-import "./styles/global.scss";
+import { Login } from "./pages/Login";
 const App = () => {
-  return <div>Hello World</div>;
+  return <Login />;
 };
 
 export default App;
