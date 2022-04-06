@@ -35,7 +35,8 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
+        test: /\.(png|jp(e*)g|svg|gif|ico)$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: "file-loader",
@@ -51,6 +52,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, "public", "index.html"),
+      favicon: "./public/favicon.ico",
     }),
     new webpack.ProvidePlugin({
       React: "react",

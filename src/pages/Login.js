@@ -60,6 +60,7 @@ export const Login = (props) => {
           inputPlaceholder="Informe seu email"
           value={login}
           setValue={setLogin}
+          className="input"
         />
         <Input
           srcImg={lock}
@@ -69,6 +70,7 @@ export const Login = (props) => {
           inputPlaceholder="Informe sua senha"
           value={senha}
           setValue={setSenha}
+          className="input"
         />
 
         <button onClick={executaLogin} disabled={isLoading}>
