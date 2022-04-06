@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import logo from "../assets/icones/logo1.png";
+import logo from "../assets/icones/logo.svg";
+import logoHeader from "../assets/icones/logo-header.svg";
 import mail from "../assets/icones/mail.svg";
 import lock from "../assets/icones/lock.svg";
 import { Input } from "../components/Input";
@@ -45,7 +46,10 @@ export const Login = (props) => {
 
   return (
     <div className="container-login">
-      <img src={logo} alt="Logo Feel Tech" className="logo" />
+      <div>
+        <img src={logo} alt="Logo Kanbang" className="logo" />
+        <img src={logoHeader} alt="Texto Kanbang" className="logo" />
+      </div>
       <form>
         {msgErro && <p>{msgErro}</p>}
         <Input

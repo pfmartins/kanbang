@@ -1,20 +1,16 @@
 import React from "react";
+import { Header } from "../components/Header";
 
 export const Home = (props) => {
+  const sair = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("usuarioNome");
+    localStorage.removeItem("usuarioEmail");
+    props.setAccessToken("");
+  };
   return (
     <>
-      <h1>Gerenciador de Tarefas</h1>
-      <a
-        onClick={(e) => {
-          localStorage.removeItem("");
-          localStorage.removeItem("accessToken");
-          localStorage.removeItem("usuarioNome");
-          localStorage.removeItem("usuarioEmail");
-          props.setAccessToken("");
-        }}
-      >
-        Sair
-      </a>
+      <Header sair={sair} />
     </>
   );
 };
