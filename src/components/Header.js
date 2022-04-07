@@ -12,9 +12,9 @@ export const Header = (props) => {
   return (
     <div className="container-header">
       <img className="logo" src={logo} alt="Logo Kanbang" />
-      <button onClick={showModal}>
+      {/* <button onClick={showModal}>
         <span>+</span> Adicionar tarefa
-      </button>
+      </button> */}
       <div className="mobile">
         <span>{"Olá, " + primeiroNome}</span>
         <img className="sair" src={sair} alt="Deslogar" onClick={props.sair} />
