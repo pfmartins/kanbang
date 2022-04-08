@@ -5,6 +5,7 @@ import mail from "../assets/icones/mail.svg";
 import lock from "../assets/icones/lock.svg";
 import { Input } from "../components/Input";
 import { executaRequisicao } from "../services/api";
+import { handleError } from "../services/logs";
 
 export const Login = (props) => {
   const [login, setLogin] = useState("");
@@ -33,6 +34,7 @@ export const Login = (props) => {
       }
     } catch (e) {
       console.log(e);
+      handleError(e.message, e);
       if (e?.response?.data?.erro) {
         setMsgErro(e.response.data.erro);
       } else {

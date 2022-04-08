@@ -4,7 +4,7 @@ import sair from "../assets/icones/exit.svg";
 import sairDesktop from "../assets/icones/exit-desktop.svg";
 
 export const Header = (props) => {
-  const { showModal } = props;
+  // const { showModal } = props;
   //pegando nome do usuário e fazendo um split para pegar o primeiro nome
   const nomeCompleto = localStorage.getItem("usuarioNome");
   const primeiroNome = nomeCompleto?.split(" ")[0] || "";
