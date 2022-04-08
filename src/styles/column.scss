@@ -1,0 +1,22 @@
+@import './config.scss';
+
+.container-column{
+  margin: 8px;
+  border: 1px solid $lightGreyColor;
+  border-radius: 5px;
+  width:200px;
+  height: 600px;
+  display:flex;
+  flex-direction: column;
+  background-color: $columnColor;
+
+  h3 {
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  .taskList {
+    padding: 8px;
+    
+  }
+}
