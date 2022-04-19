@@ -18,15 +18,15 @@ export const Task = (props) => {
               <div className="kb-tooltip__content">Urgente</div>
             </div>
           </div>
-          <div className="task-details-container">
-            <div className="task-details-title">{props.task.content}</div>
-            <div className="task-details">
-              Protótipo inicial do Kanbang no Figma para se ter uma ideia das
-              funcionalidades que teremos nele e suas possibilidades.
-            </div>
+          <div className="task-container">
+            <div className="task-title">{props.task.title}</div>
+            <div className="task-details">{props.task.content}</div>
           </div>
           <div className="comments-container">
-            <FaExpandAlt />
+            <div className="kb-tooltip">
+              <FaExpandAlt />
+              <div className="kb-tooltip__comments">Abrir</div>
+            </div>
           </div>
         </div>
       )}

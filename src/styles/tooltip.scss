@@ -14,8 +14,25 @@
 
     position: absolute;
     z-index: 1;
+    
+  }
+  &__comments {
+    visibility: hidden;
+    width: 50px;
+    background-color: $mediumGreyColor;
+    color: $whiteColor;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+    
   }
   &:hover .kb-tooltip__content {
+    visibility: visible;
+  }
+  &:hover .kb-tooltip__comments {
     visibility: visible;
   }
 }
