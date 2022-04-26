@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 require("dotenv").config({ path: "./.env" });
+
 module.exports = {
   //devtool: "eval-source-map", //para renderizar o codigo exatamente como é (sem utilizar)
   entry: path.resolve(__dirname, "src", "index.js"),

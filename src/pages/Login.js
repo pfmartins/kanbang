@@ -6,6 +6,7 @@ import lock from "../assets/icones/lock.svg";
 import { Input } from "../components/Input";
 import { executaRequisicao } from "../services/api";
 import { handleError } from "../services/logs";
+import { successMessage, errorMessage } from "../components/toast/Toast";
 
 export const Login = (props) => {
   const [login, setLogin] = useState("");
@@ -31,14 +32,19 @@ export const Login = (props) => {
         localStorage.setItem("usuarioNome", resultado.data.nome);
         localStorage.setItem("usuarioEmail", resultado.data.email);
         props.setAccessToken(resultado.data.token);
+        successMessage("Login efetuado com sucesso");
       }
     } catch (e) {
       console.log(e);
       handleError(e.message, e);
       if (e?.response?.data?.erro) {
         setMsgErro(e.response.data.erro);
+        errorMessage(e.response.data.erro);
       } else {
         setMsgErro(
+          "Não foi possível efetuar o login, fale com o administrador."
+        );
+        errorMessage(
           "Não foi possível efetuar o login, fale com o administrador."
         );
       }
@@ -53,7 +59,7 @@ export const Login = (props) => {
         <img src={logoHeader} alt="Texto Kanbang" className="logo" />
       </div>
       <form>
-        {msgErro && <p>{msgErro}</p>}
+        {/* {msgErro && <p>{msgErro}</p>} */}
         <Input
           srcImg={mail}
           altImg={"Icone email"}
