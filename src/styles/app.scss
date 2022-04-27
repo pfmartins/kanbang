@@ -36,10 +36,10 @@ body{
 }
 
 @import './config.scss';
-@import './login.scss';
-@import './header.scss';
-@import './column.scss';
-@import './task.scss';
-@import './home.scss';
+@import '../pages/login/login.scss';
+@import '../components/header/header.scss';
+@import '../components/column/column.scss';
+@import '../components/task/task.scss';
+@import '../pages/Home/home.scss';
 @import '../components/toast/toast.scss';
 @import './tooltip.scss';

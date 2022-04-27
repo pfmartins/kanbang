@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../assets/icones/logo-header.svg";
-import sair from "../assets/icones/exit.svg";
-import sairDesktop from "../assets/icones/exit-desktop.svg";
+import logo from "../../assets/icones/logo-header.svg";
+import sair from "../../assets/icones/exit.svg";
+import sairDesktop from "../../assets/icones/exit-desktop.svg";
 
 export const Header = (props) => {
   // const { showModal } = props;

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import logo from "../assets/icones/logo.svg";
-import logoHeader from "../assets/icones/logo-header.svg";
-import mail from "../assets/icones/mail.svg";
-import lock from "../assets/icones/lock.svg";
-import { Input } from "../components/Input";
-import { executaRequisicao } from "../services/api";
-import { handleError } from "../services/logs";
-import { successMessage, errorMessage } from "../components/toast/Toast";
+import logo from "../../assets/icones/logo.svg";
+import logoHeader from "../../assets/icones/logo-header.svg";
+import mail from "../../assets/icones/mail.svg";
+import lock from "../../assets/icones/lock.svg";
+import { Input } from "../../components/input/Input";
+import { executaRequisicao } from "../../services/api";
+import { handleError } from "../../services/logs";
+import { successMessage, errorMessage } from "../../components/toast/Toast";
 
 export const Login = (props) => {
   const [login, setLogin] = useState("");

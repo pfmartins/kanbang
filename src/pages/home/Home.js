@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Column } from "../components/Column";
-import { Header } from "../components/Header";
+import { Column } from "../../components/column/Column";
+import { Header } from "../../components/header/Header";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import dataset from "../../dataset";
+import dataset from "../../../dataset";
 
 export const Home = (props) => {
   const [data, setData] = useState(dataset);

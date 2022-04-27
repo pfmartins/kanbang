@@ -1,6 +1,6 @@
 import React from "react";
 import { Droppable, Draggable } from "react-beautiful-dnd";
-import { Task } from "./Task";
+import { Task } from "../task/Task";
 
 export const Column = (props) => {
   return (
