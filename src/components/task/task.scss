@@ -14,8 +14,7 @@
   background-color: $whiteColor;
   height: 11rem;
   border-radius: 5px;
-  border-top: 3px solid $primaryColor;
-  margin-top: 1rem;
+  border-top: 3px solid $urgentPriorityRed;
   box-shadow: 1px 2px 3px rgb(122, 121, 121);
   margin-bottom: 1rem;
 }
@@ -38,15 +37,6 @@
   width: 100%;
 }
 
-.categories-tags {
-  border: 1px solid $borderColor;
-  background-color: $whiteColor;
-  border-radius: 10px;
-  font-size: 11px;
-  margin-right: 10px;
-  padding: 3px;
-  color: $categoriesColor;
-}
 
 .task-card-priority-title {
   color: #FF002A;
@@ -56,11 +46,25 @@
   padding: 0.5rem 1rem 1.5rem 1rem;
 }
 
+.task-card-tags-container {
+  border: 1px solid $borderColor;
+  background-color: $whiteColor;
+  border-radius: 10px;
+  font-size: 11px;
+  width: 4rem;
+  text-align: center;
+  color: $categoriesColor;
+}
+
 .task-title {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.task-card-prioority-icon {
+  color: $urgentPriorityRed;
 }
 
 .task-details {

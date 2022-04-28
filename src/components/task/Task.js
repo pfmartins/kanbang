@@ -14,8 +14,11 @@ export const Task = (props) => {
         >
           <div className="task-card-header">
             <div className="kb-tooltip">
-              <FaExclamationTriangle />
+              <FaExclamationTriangle className="task-card-prioority-icon" />
               <div className="kb-tooltip__content">Urgente</div>
+            </div>
+            <div className="task-card-tags-container">
+              <span className="task-card-tag">feature</span>
             </div>
           </div>
           <div className="task-container">
